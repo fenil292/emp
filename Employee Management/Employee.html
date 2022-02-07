@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="Employee.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="StorageUtill.js"></script>
+    <script src="Employee.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div><h1><center>Employee Management System</center></h1></div>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" class="form-control search" id="" placeholder="Search here...">
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Employee</button>
+                
+            </div>
+            <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div><form id="emp_form">
+                    <div class="modal-body">
+                        <div class="">
+                            <label for="exampleFormControlInput1">First Name</label>
+                            <input type="text" class="form-control" id="txtfname" placeholder="">
+                        </div>
+                        <div>
+                            <label for="exampleFormControlInput1">Last Name</label>
+                            <input type="text" class="form-control" id="txtlname" placeholder="">
+                        </div>
+                        <div>
+                            <label for="exampleFormControlInput1">Designation</label>
+                            <select class="form-control" id="drpdesig">
+                                <option>Default select</option>
+                                <option value="PHP Developer">PHP Developer</option>
+                                <option value="Web Designer">Web Designer</option>
+                                <option value=".NET Developer">.NET Developer</option>
+                            </select>
+                        </div>
+                        <div class="row mb-2">
+                        <div class="col-md-4">
+                            <div><label for="exampleFormControlInput1">Gender</label></div>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="radio" name="rdgender" id="exampleRadios1" value="male" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Male
+                                </label>
+                              </div>
+                              <div class="form-check d-inline-block ">
+                                <input class="form-check-input" type="radio" name="rdgender" id="exampleRadios1" value="female">
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Female
+                                </label>
+                              </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div><label for="exampleFormControlInput1">Hobby</label></div>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="checkbox" value="Reading" id="defaultCheck1" name="chkhob">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Reading
+                                </label>
+                              </div>
+                              <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="checkbox" value="Cricket" id="defaultCheck1" name="chkhob">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Cricket
+                                </label>
+                              </div>
+                              <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="checkbox" value="Music" id="defaultCheck1" name="chkhob">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Music
+                                </label>
+                              </div>
+                        </div></div>
+                        <div>
+                            <div><label for="exampleFormControlInput1">Date of Birth</label></div>
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="date" class="form-control" id="txtdob">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="exampleFormControlInput1">Email</label>
+                            <input type="text" class="form-control" id="txtemail" placeholder="">
+                        </div>
+                        <div>
+                            <label for="exampleFormControlInput1">Phone No</label>
+                            <input type="text" class="form-control" id="txtphno" placeholder="">
+                        </div>
+                    </div></form>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="btn_submit">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Designation</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="employee-list">
+                      
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
